@@ -150,6 +150,100 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-《Essential C++》读书笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第1章-C-编程基础"><a href="#第1章-C-编程基础" class="headerlink" title="第1章    C++编程基础"></a>第1章    C++编程基础</h1><h2 id="1-1如何撰写C-程序"><a href="#1-1如何撰写C-程序" class="headerlink" title="1.1如何撰写C++程序"></a>1.1如何撰写C++程序</h2><ul>
+<li><p>class的定义，一般来说分为两部分，分别写在不同的文件中。其中之一是所谓的“头文件（header file）“，用来声明该class所提供的各种操作行为（operation）。另一个文件，程序代码文件（program text），则包含了这些操作行为的实现内容（implementation）。</p>
+</li>
+<li><p>命名空间（namespace）</p>
+<ol>
+<li><p>为了处理在不同的库中出现同名函数、类和变量的情况，引入<strong>命名空间</strong>这个概念。</p>
+</li>
+<li><p>定义命名空间：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> namespace_name&#123;</span><br><span class="line">    <span class="comment">//代码声明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>为了调用带有命名空间的函数或者变量，需要在前面加上命名空间的名称：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name::code	<span class="comment">//code可以是函数或者变量</span></span><br></pre></td></tr></table></figure>
+
+<p>一个实例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 第一个命名空间</span></span><br><span class="line"><span class="keyword">namespace</span> first_space&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"Inside first_space"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第二个命名空间</span></span><br><span class="line"><span class="keyword">namespace</span> second_space&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"Inside second_space"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 调用第一个命名空间中的函数</span></span><br><span class="line">   first_space::func();</span><br><span class="line">   </span><br><span class="line">   <span class="comment">// 调用第二个命名空间中的函数</span></span><br><span class="line">   second_space::func(); </span><br><span class="line"> </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Inside first_space</span><br><span class="line">Inside second_space</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>using指令</strong></p>
+<p>使用 <strong>using namespace</strong> 指令，这样在使用命名空间时就可以不用在前面加上命名空间的名称。这个指令会告诉编译器，后续的代码将使用指定的命名空间中的名称。</p>
+<p>实例：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="comment">// 第一个命名空间</span></span><br><span class="line"><span class="keyword">namespace</span> first_space&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"Inside first_space"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第二个命名空间</span></span><br><span class="line"><span class="keyword">namespace</span> second_space&#123;</span><br><span class="line">   <span class="function"><span class="keyword">void</span> <span class="title">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">      <span class="built_in">cout</span> &lt;&lt; <span class="string">"Inside second_space"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> first_space;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"> </span><br><span class="line">   <span class="comment">// 调用第一个命名空间中的函数</span></span><br><span class="line">   func();</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当上面的代码被编译和执行时，它会产生下列结果：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Inside first_space</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="1-2对象的定义与初始化"><a href="#1-2对象的定义与初始化" class="headerlink" title="1.2对象的定义与初始化"></a>1.2对象的定义与初始化</h2><ul>
+<li>template class允许我们在”不必声明data member<u>类型</u>“的情况下定义class。</li>
+<li>template class机制使程序员得以直到使用template class时才决定真正的数据成员。程序员可以先插入一个代名，稍后才绑定至实际的数据类型。</li>
+</ul>
+<h2 id="1-5如何使用Array和Vector"><a href="#1-5如何使用Array和Vector" class="headerlink" title="1.5如何使用Array和Vector"></a>1.5如何使用Array和Vector</h2><ul>
+<li><p>定义vector object，我们首先必须包含vector头文件。</p>
+</li>
+<li><p>vector是个class template，所以我们必须在类名之后的尖括号&lt;&gt;内指定其元素类型。</p>
+</li>
+<li><p>可以利用一个已经初始化的array作为一个vector的初值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//以array的值来初始化vector</span></span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec(<span class="built_in">array</span>,<span class="built_in">array</span>+n);<span class="comment">//n为array中元素的个数</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/19/《Essential C++》读书笔记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
