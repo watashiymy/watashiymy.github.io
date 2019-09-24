@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Nullptr">
 <meta property="og:description" content="第二章    面向过程的编程风格2.2 调用函数 参数传递方式：传址（by reference）、传值（by value）、传指针（by pointer）。 注意区分传引用和传指针的区别！  当以by reference方式将对象作为函数参数传入时，对象本身并不会复制出另一份——复制的是对象的地址。  将参数声明为reference的理由：  希望得以直接对传入的对象进行修改。 降低复制大型对象的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-22T14:10:57.020Z">
+<meta property="og:updated_time" content="2019-09-24T16:00:13.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Procedural Programming">
 <meta name="twitter:description" content="第二章    面向过程的编程风格2.2 调用函数 参数传递方式：传址（by reference）、传值（by value）、传指针（by pointer）。 注意区分传引用和传指针的区别！  当以by reference方式将对象作为函数参数传入时，对象本身并不会复制出另一份——复制的是对象的地址。  将参数声明为reference的理由：  希望得以直接对传入的对象进行修改。 降低复制大型对象的">
@@ -299,7 +299,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  373
+                  592
                 </span>
               
 
@@ -315,7 +315,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -367,7 +367,20 @@
 </ul>
 </li>
 </ul>
-<h2 id="2-3-提供默认参数值"><a href="#2-3-提供默认参数值" class="headerlink" title="2.3 提供默认参数值"></a>2.3 提供默认参数值</h2>
+<h2 id="2-3-提供默认参数值"><a href="#2-3-提供默认参数值" class="headerlink" title="2.3 提供默认参数值"></a>2.3 提供默认参数值</h2><ul>
+<li><p>一般程序的编写法则是，以“<strong>参数传递</strong>”作为函数间的沟通方式，比“直接将对象定义于file scope”更恰当，因为函数如果过度依赖全局变量，就比较难再在其他环境中 重用，也比较难修改。</p>
+</li>
+<li><p>关于默认参数值提供的两个潜规则：</p>
+<ol>
+<li><p><strong>默认值的解析操作由最右边开始进行。</strong>即如果我们为某个参数提供了默认值，那么这一参数<strong>右侧</strong>的所有参数都必须也具有默认参数值：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//错误：没有为vec提供默认值</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">display</span><span class="params">(ostream &amp;os=<span class="built_in">cout</span>,<span class="keyword">const</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; &amp;vec)</span></span>;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认值只能指定一次，可以在<strong>函数声明处</strong>，也可以在<strong>函数定义处</strong>，为了更高的可见性，<strong>一般将默认值放在函数声明处</strong>而非定义处。</p>
+</li>
+</ol>
+</li>
+</ul>
+
       
     </div>
     
@@ -580,7 +593,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.6k</span>
+    <span title="Site words total count">1.8k</span>
   
 </div>
 
