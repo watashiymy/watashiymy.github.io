@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="《Essential C++》学习笔记,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta name="keywords" content="C++">
+<meta name="description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
+<meta name="keywords" content="《Essential C++》学习笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://watashiymy.github.io/2019/09/14/hello-world/index.html">
+<meta property="og:title" content="Object-Based Programming">
+<meta property="og:url" content="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/index.html">
 <meta property="og:site_name" content="Nullptr">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-09-14T06:26:43.552Z">
+<meta property="og:updated_time" content="2019-10-11T16:11:33.563Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="Object-Based Programming">
+<meta name="twitter:description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://watashiymy.github.io/2019/09/14/hello-world/">
+  <link rel="canonical" href="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/">
 
 
 
 
 
-  <title>Hello World | Nullptr</title>
+  <title>Object-Based Programming | Nullptr</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://watashiymy.github.io/2019/09/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="watashiymy">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Object-Based Programming</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-09-14T14:26:43+08:00">
-                2019-09-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-11T23:09:33+08:00">
+                2019-10-11
               </time>
             
 
@@ -299,7 +299,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  73
+                  431
                 </span>
               
 
@@ -336,19 +336,35 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="第四章-基于对象的编程风格"><a href="#第四章-基于对象的编程风格" class="headerlink" title="第四章 基于对象的编程风格"></a>第四章 基于对象的编程风格</h1><p>class的相关事务：</p>
+<ul>
+<li>由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以<strong>包含某个头文件</strong>来完成这件事。</li>
+<li>class名称被视为一个类型名称，就像内置类型一样。</li>
+<li>每个class都会提供一组操作函数，让用户作用于其object上。</li>
+<li>一般而言，class由两部分组成：<ol>
+<li>一组公开的（public）<strong>操作函数</strong>和<strong>运算符</strong>。</li>
+<li>一组私有的（private）实现细节。</li>
+</ol>
+</li>
+</ul>
+<h2 id="4-1-如何实现一个Class"><a href="#4-1-如何实现一个Class" class="headerlink" title="4.1 如何实现一个Class"></a>4.1 如何实现一个Class</h2><ul>
+<li>Public member可以在程序的任何地方被访问，private member只能在member function或是class friend内被访问。</li>
+<li>一个编码习惯：在data member之前加上<strong>下划线</strong>。</li>
+<li>所有member function都必须在class主体内进行声明。至于是否同时进行定义，可自由决定。</li>
+<li>如果在class主体内定义member function，则该function会被自动视为<strong>inline函数</strong>。</li>
+<li>class定于及其inline member function通常都会被放在与class同名的头文件中。</li>
+<li>non-inline member function应该在程序代码文件中定义，该文件通常和class同名，其后接着扩展名.c、.cc、.cpp、.cxx（x代表横放的+）。</li>
+</ul>
+<h2 id="4-2-什么是构造函数和析构函数"><a href="#4-2-什么是构造函数和析构函数" class="headerlink" title="4.2 什么是构造函数和析构函数"></a>4.2 什么是构造函数和析构函数</h2><ul>
+<li>constructor的函数名必须与class名称相同。</li>
+<li>constructor不应该指定返回类型，也不用返回任何值。</li>
+<li>默认构造函数（default constructor）不需要任何参数。这意味着两种情况：<ol>
+<li>默认构造函数不接受任何参数。</li>
+<li>默认构造函数为每个参数提供了默认值（更常见的情况）。</li>
+</ol>
+</li>
+<li>最好不要相信”用户永远是对的“这句话:)</li>
+</ul>
 
       
     </div>
@@ -364,6 +380,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/《Essential-C-》学习笔记/" rel="tag"># 《Essential C++》学习笔记</a>
+          
+        </div>
+      
 
       
       
@@ -373,15 +395,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/09/22/Procedural-Programming/" rel="next" title="Procedural Programming">
+                <i class="fa fa-chevron-left"></i> Procedural Programming
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/09/22/Basic-Cpp-Programming/" rel="prev" title="Basic Cpp Programming">
-                Basic Cpp Programming <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -522,7 +544,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-基于对象的编程风格"><span class="nav-number">1.</span> <span class="nav-text">第四章 基于对象的编程风格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-如何实现一个Class"><span class="nav-number">1.1.</span> <span class="nav-text">4.1 如何实现一个Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-什么是构造函数和析构函数"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 什么是构造函数和析构函数</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -556,7 +578,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.8k</span>
+    <span title="Site words total count">2.2k</span>
   
 </div>
 
