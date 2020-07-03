@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="《Essential C++》学习笔记,">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
-<meta name="keywords" content="《Essential C++》学习笔记">
+<meta name="description" content="对覆盖特性的理解要体现覆盖特性得满足两个条件：  父类中的实例方法被子类覆盖 父类型的引用变量引用了子类对象  覆盖特性是说，在满足了上述两个条件的情况下，这时不能通过这个父类型的引用变量去访问被覆盖的父类方法。 举个例子： 有个Person类，其中有实例方法run()，Person类有个子类叫Bolt类（指那些跑得很快的人），且Bolt类覆盖了从Person类继承来的run()方法，这里的“覆盖">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Object-Based Programming">
-<meta property="og:url" content="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/index.html">
+<meta property="og:title" content="Override">
+<meta property="og:url" content="https://watashiymy.github.io/2020/07/03/Override/index.html">
 <meta property="og:site_name" content="Nullptr">
-<meta property="og:description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
+<meta property="og:description" content="对覆盖特性的理解要体现覆盖特性得满足两个条件：  父类中的实例方法被子类覆盖 父类型的引用变量引用了子类对象  覆盖特性是说，在满足了上述两个条件的情况下，这时不能通过这个父类型的引用变量去访问被覆盖的父类方法。 举个例子： 有个Person类，其中有实例方法run()，Person类有个子类叫Bolt类（指那些跑得很快的人），且Bolt类覆盖了从Person类继承来的run()方法，这里的“覆盖">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-11T16:18:33.459Z">
+<meta property="og:updated_time" content="2020-07-03T07:07:03.856Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Object-Based Programming">
-<meta name="twitter:description" content="第四章 基于对象的编程风格class的相关事务：  由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以包含某个头文件来完成这件事。 class名称被视为一个类型名称，就像内置类型一样。 每个class都会提供一组操作函数，让用户作用于其object上。 一般而言，class由两部分组成： 一组公开的（public）操作函数和运算符。 一组私有的（private）实">
+<meta name="twitter:title" content="Override">
+<meta name="twitter:description" content="对覆盖特性的理解要体现覆盖特性得满足两个条件：  父类中的实例方法被子类覆盖 父类型的引用变量引用了子类对象  覆盖特性是说，在满足了上述两个条件的情况下，这时不能通过这个父类型的引用变量去访问被覆盖的父类方法。 举个例子： 有个Person类，其中有实例方法run()，Person类有个子类叫Bolt类（指那些跑得很快的人），且Bolt类覆盖了从Person类继承来的run()方法，这里的“覆盖">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/">
+  <link rel="canonical" href="https://watashiymy.github.io/2020/07/03/Override/">
 
 
 
 
 
-  <title>Object-Based Programming | Nullptr</title>
+  <title>Override | Nullptr</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://watashiymy.github.io/2019/10/11/Object-Based-Programming/">
+    <link itemprop="mainEntityOfPage" href="https://watashiymy.github.io/2020/07/03/Override/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="watashiymy">
@@ -250,7 +250,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Object-Based Programming</h1>
+          <h1 class="post-title" itemprop="name headline">Override</h1>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-11T23:09:33+08:00">
-                2019-10-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-03T15:06:27+08:00">
+                2020-07-03
               </time>
             
 
@@ -299,7 +299,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  431
+                  322
                 </span>
               
 
@@ -336,35 +336,19 @@
       
 
       
-        <h1 id="第四章-基于对象的编程风格"><a href="#第四章-基于对象的编程风格" class="headerlink" title="第四章 基于对象的编程风格"></a>第四章 基于对象的编程风格</h1><p>class的相关事务：</p>
-<ul>
-<li>由于class并非程序语言本身内置的，所以在使用之前必须先让程序知道它，通常我们会以<strong>包含某个头文件</strong>来完成这件事。</li>
-<li>class名称被视为一个类型名称，就像内置类型一样。</li>
-<li>每个class都会提供一组操作函数，让用户作用于其object上。</li>
-<li>一般而言，class由两部分组成：<ol>
-<li>一组公开的（public）<strong>操作函数</strong>和<strong>运算符</strong>。</li>
-<li>一组私有的（private）实现细节。</li>
+        <h2 id="对覆盖特性的理解"><a href="#对覆盖特性的理解" class="headerlink" title="对覆盖特性的理解"></a>对覆盖特性的理解</h2><p>要体现覆盖特性得满足两个条件：</p>
+<ol>
+<li>父类中的实例方法被子类覆盖</li>
+<li>父类型的引用变量引用了子类对象</li>
 </ol>
-</li>
-</ul>
-<h2 id="4-1-如何实现一个Class"><a href="#4-1-如何实现一个Class" class="headerlink" title="4.1 如何实现一个Class"></a>4.1 如何实现一个Class</h2><ul>
-<li>Public member可以在程序的任何地方被访问，private member只能在member function或是class friend内被访问。</li>
-<li>一个编码习惯：在data member之前加上<strong>下划线</strong>。</li>
-<li>所有member function都必须在class主体内进行声明。至于是否同时进行定义，可自由决定。</li>
-<li>如果在class主体内定义member function，则该function会被自动视为<strong>inline函数</strong>。</li>
-<li>class定于及其inline member function通常都会被放在与class同名的头文件中。</li>
-<li>non-inline member function应该在程序代码文件中定义，该文件通常和class同名，其后接着扩展名.c、.cc、.cpp、.cxx（x代表横放的+）。</li>
-</ul>
-<h2 id="4-2-什么是构造函数和析构函数"><a href="#4-2-什么是构造函数和析构函数" class="headerlink" title="4.2 什么是构造函数和析构函数"></a>4.2 什么是构造函数和析构函数</h2><ul>
-<li>constructor的函数名必须与class名称相同。</li>
-<li>constructor不应该指定返回类型，也不用返回任何值。</li>
-<li>默认构造函数（default constructor）不需要任何参数。这意味着两种情况：<ol>
-<li>默认构造函数不接受任何参数。</li>
-<li>默认构造函数为每个参数提供了默认值（更常见的情况）。</li>
-</ol>
-</li>
-<li>最好不要相信”用户永远是对的“这句话:)</li>
-</ul>
+<p>覆盖特性是说，在满足了上述两个条件的情况下，这时不能通过这个父类型的引用变量去访问被覆盖的父类方法。</p>
+<p>举个例子：</p>
+<p>有个Person类，其中有实例方法run()，Person类有个子类叫Bolt类（指那些跑得很快的人），且Bolt类覆盖了从Person类继承来的run()方法，这里的“覆盖”可以理解为训练，虽然都是跑步，但普通人的跑步和博尔特的跑步显然是不一样的嘛。</p>
+<p>这时候我们有：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Person p = <span class="keyword">new</span> Bolt();</span><br><span class="line">p.run();</span><br></pre></td></tr></table></figure>
+
+<p>在p没跑起来之前，大家都觉得他是普通人，但其实他的run和普通人的run是不一样的，而且他跑步的速度也不会和普通人的一样了（被覆盖的父类方法不可再发现）。</p>
+<p>但是呢，在p没跑起来之前，大家都只知道他会跑，但不知道他能跑多快，只有程序运行起来了，p才能展现他真正的速度，这也就是所谓的<strong>晚期绑定</strong>。</p>
 
       
     </div>
@@ -382,7 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/《Essential-C-》学习笔记/" rel="tag"># 《Essential C++》学习笔记</a>
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -395,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/09/22/Procedural-Programming/" rel="next" title="Procedural Programming">
-                <i class="fa fa-chevron-left"></i> Procedural Programming
+              <a href="/2019/10/11/Object-Based-Programming/" rel="next" title="Object-Based Programming">
+                <i class="fa fa-chevron-left"></i> Object-Based Programming
               </a>
             
           </div>
@@ -404,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/07/03/Override/" rel="prev" title="Override">
-                Override <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -548,7 +528,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章-基于对象的编程风格"><span class="nav-number">1.</span> <span class="nav-text">第四章 基于对象的编程风格</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-如何实现一个Class"><span class="nav-number">1.1.</span> <span class="nav-text">4.1 如何实现一个Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-什么是构造函数和析构函数"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 什么是构造函数和析构函数</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#对覆盖特性的理解"><span class="nav-number">1.</span> <span class="nav-text">对覆盖特性的理解</span></a></li></ol></div>
             
 
           </div>
